@@ -92,6 +92,41 @@
         document.getElementById('textDiv')
       );
 
+      var OnOff = React.createClass({
+        getInitialState: function(){
+          return {
+            hoverFlag: false
+          }
+        },
+        changeColor: function(){
+          this.setState({
+            hoverFlag: !this.state.hoverFlag
+          })
+        },
+        render: function(){
+          var styleList = { 'strokeWidth': 3,
+                            'fillOpacity': 0.5,
+                            'strokeOpacity': 0.3,
+                            'fill': 'aqua',
+                            'stroke': 'black'
+                          }
+          if(this.state.hoverFlag){
+            styleList['fill'] = 'red'
+          }
+          return (
+            <div id="Container">
+            <svg width="400" height="110">
+              <rect width="100" height="100" style={styleList} onMouseOver={this.changeColor} onMouseOut={this.changeColor}></rect>
+            </svg>
+            </div>
+          )
+        }
+      });
+      ReactDOM.render(
+        <OnOff/>,
+        document.getElementById('changeColorDiv')
+      );
+
     </script>
   </body>
 </html>
