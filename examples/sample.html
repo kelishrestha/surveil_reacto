@@ -1,0 +1,34 @@
+<!-- Samples -->
+<!-- 1. Counter on button clicks and resets -->
+<!-- 2. Printing what is being typed -->
+<!-- 3. Color Change on hover effect -->
+<html>
+  <head>
+    <script type="text/javascript" src="../build/react.js"></script>
+    <script type="text/javascript" src="../build/react-dom.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="parentDiv"></div>
+    <div id="childDiv"></div>
+    <div id="textDiv"></div>
+    <div id="changeColorDiv"></div>
+
+
+    <script type="text/babel">
+      var ParentDiv = React.createClass({
+        render: function(){
+          return (
+            <h3>Success!! on Rendering { this.props.file }</h3>
+          );
+        }
+      });
+      ReactDOM.render(
+        <ParentDiv file="First REACT JS file"/>,
+        document.getElementById('parentDiv')
+      );
+    </script>
+  </body>
+</html>
+
+
