@@ -65,6 +65,33 @@
         document.getElementById('childDiv')
       );
 
+      var TextDiv = React.createClass({
+        getInitialState: function(){
+          return {
+            text: ''
+          }
+        },
+        showText: function(event){
+          this.setState({
+            text: event.target.value
+          })
+        },
+        render: function(){
+          return (
+            <div id="textContainer">
+              <br/>
+              <input type="text" placeholder="Type Here" onChange={this.showText}></input>
+              <h4>You are typing {this.state.text}</h4>
+            </div>
+          )
+        }
+      });
+
+      ReactDOM.render(
+        <TextDiv/>,
+        document.getElementById('textDiv')
+      );
+
     </script>
   </body>
 </html>
