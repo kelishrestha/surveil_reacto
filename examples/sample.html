@@ -27,6 +27,44 @@
         <ParentDiv file="First REACT JS file"/>,
         document.getElementById('parentDiv')
       );
+
+      var ChildDiv = React.createClass({
+        getInitialState: function(){
+          return {
+            count: 0
+          }
+        },
+        getDefaultProps: function(){
+          return {
+            name: "Initial State",
+
+          }
+        },
+        incrementCount: function(){
+          this.setState({
+            count: this.state.count + 1
+          })
+        },
+        resetCount: function(){
+          this.setState({
+            count: 0
+          })
+        },
+        render: function(){
+          return (
+            <div id="container">
+              <h4>{this.props.name} = {this.state.count}</h4>
+              <button type="button" onClick={this.incrementCount}>Click Me</button>
+              <button type="button" onClick={this.resetCount}>Reset IT!!</button>
+            </div>
+          );
+        }
+      });
+      ReactDOM.render(
+        <ChildDiv/>,
+        document.getElementById('childDiv')
+      );
+
     </script>
   </body>
 </html>
